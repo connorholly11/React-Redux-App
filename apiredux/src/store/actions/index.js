@@ -10,8 +10,8 @@ export const getPlayer = () => dispatch => {
 
     axios.get('https://www.balldontlie.io/api/v1/players')
         .then(response => {
-            console.log(response);
-            dispatch({type: FETCHING_PLAYER_SUCCESS, payload: response.data.first_name})
+            console.log(response.data.data);
+            dispatch({type: FETCHING_PLAYER_SUCCESS, payload: response.data.data})
         })
         .catch(error => {
             dispatch({type: FETCHING_PLAYER_FAILURE, payload: `${error.response}`})

@@ -13,12 +13,15 @@ const Players = ({getPlayer, players, isFetching, error}) => {
     if (isFetching){
         return <h2>fetching data from the api</h2>
     }
-    
+
     
     return(
         <div>
             <h1>NBA PLAYERS</h1>
-            <h3>{players}</h3>
+            {players.map(player => {
+                return <h3>{player.first_name}</h3>
+            })}
+            {/* <button onClick={getPlayer}> GET A NEW PLAYER </button> */}
         </div>
     )
 }

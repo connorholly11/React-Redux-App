@@ -1,8 +1,8 @@
-import {FETCHING_PLAYER_START, FETCHING_PLAYER_SUCCESS, FETCHING_PLAYER_FAILURE} from '../actions'
+import {FETCHING_PLAYER_START, FETCHING_PLAYER_SUCCESS, FETCHING_PLAYER_FAILURE, getPlayer} from '../actions'
 
 
 export const initialState = {
-    players: null,
+    players: [],
     isFetching: false,
     error: ''
 }
@@ -18,9 +18,21 @@ export const PlayerReducer = (state = initialState, action) => {
         case FETCHING_PLAYER_SUCCESS:
             return{
                 ...state,
-                player: action.payload,
+                players: action.payload,
                 isFetching: false
             }
+
+        //     return {
+        //     state.map(state => {
+        //             ...state,
+        //             state.first_name
+                
+        //     })
+        // }
+            
+
+
+
         // case FETCHING_PLAYER_FAILURE:
         //     return{
         //         ...state,
