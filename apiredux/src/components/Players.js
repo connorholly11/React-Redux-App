@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux'
-import {getPlayer} from '../store/actions';
+import {getPlayer} from '../actions';
+import PlayerCard from './playercard'
 
 const Players = ({getPlayer, players, isFetching, error}) => {
 
@@ -19,9 +20,8 @@ const Players = ({getPlayer, players, isFetching, error}) => {
         <div>
             <h1>NBA PLAYERS</h1>
             {players.map(player => {
-                return <h3>{player.first_name}</h3>
+                return <PlayerCard />
             })}
-            {/* <button onClick={getPlayer}> GET A NEW PLAYER </button> */}
         </div>
     )
 }

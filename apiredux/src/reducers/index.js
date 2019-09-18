@@ -22,23 +22,6 @@ export const PlayerReducer = (state = initialState, action) => {
                 isFetching: false
             }
 
-        //     return {
-        //     state.map(state => {
-        //             ...state,
-        //             state.first_name
-                
-        //     })
-        // }
-            
-
-
-
-        // case FETCHING_PLAYER_FAILURE:
-        //     return{
-        //         ...state,
-        //         isFetching: false,
-        //         error: action.payload
-        //     }
         default:
             return state
         }
